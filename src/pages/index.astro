@@ -1,11 +1,209 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/global.css';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AROMA LUXURY - 香りを纏うシャンプー</title>
+    
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="logo">AROMA LUXURY</div>
+        <button class="cta-btn" onclick="scrollToPlan()">今すぐ始める</button>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="floating-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="hero-content">
+            <h1>香りを纏う、新しい習慣</h1>
+            <p class="hero-subtitle">20種類の香りから、あなただけのシャンプーを</p>
+            <button class="cta-btn" onclick="scrollToPlan()">プランを見る</button>
+        </div>
+    </section>
+
+    <!-- コンセプトセクション -->
+    <section class="concept">
+        <h2 class="section-title fade-in">CONCEPT</h2>
+        <div class="concept-grid">
+            <div class="concept-card fade-in">
+                <div class="concept-icon">🌸</div>
+                <h3>香水級の香り</h3>
+                <p>調香師が厳選した20種類のフレグランス。まるで香水のように、一日中あなたを包み込みます。</p>
+            </div>
+            <div class="concept-card fade-in">
+                <div class="concept-icon">✨</div>
+                <h3>毎月新しい発見</h3>
+                <p>飽きることのない豊富なラインナップ。気分や季節に合わせて、毎月違う香りを楽しめます。</p>
+            </div>
+            <div class="concept-card fade-in">
+                <div class="concept-icon">🎁</div>
+                <h3>贅沢なサブスク</h3>
+                <p>あなたのライフスタイルに合わせた2つのプラン。毎月届く特別な体験をお楽しみください。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 香りセクション -->
+    <section class="fragrance">
+        <h2 class="section-title">20 FRAGRANCES</h2>
+        <p style="text-align: center; margin-bottom: 20px; opacity: 0.9;">豊富な香りのバリエーションからお選びいただけます</p>
+        <div class="fragrance-grid">
+            <div class="fragrance-item"><div class="fragrance-name">White Musk</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Rose Garden</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Citrus Bloom</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Lavender Dream</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Ocean Breeze</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Cherry Blossom</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Vanilla Sky</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Jasmine Night</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Green Tea</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Peach Nectar</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Amber Woods</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Fresh Linen</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Berry Fusion</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Coconut Milk</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Magnolia</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Sandalwood</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Mint Refresh</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Floral Bouquet</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Honey Almond</div></div>
+            <div class="fragrance-item"><div class="fragrance-name">Silk Powder</div></div>
+        </div>
+    </section>
+
+    <!-- プランセクション -->
+    <section class="plans" id="plans">
+        <h2 class="section-title fade-in">PLANS</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px;">あなたのライフスタイルに合わせてお選びください</p>
+        <div class="plan-cards">
+            <div class="plan-card fade-in">
+                <div class="plan-name">STANDARD</div>
+                <div class="plan-price">¥3,980<span>/月</span></div>
+                <p style="color: #999; margin-bottom: 30px;">毎月3種類の香りをお届け</p>
+                <ul class="plan-features">
+                    <li>✓ 20種類から3種類を選択</li>
+                    <li>✓ 各300ml（1ヶ月分）</li>
+                    <li>✓ 送料無料</li>
+                    <li>✓ いつでも変更・スキップ可能</li>
+                    <li>✓ 初回限定ギフトボックス</li>
+                </ul>
+                <button class="cta-btn" style="width: 100%; margin-top: 20px;">このプランを選ぶ</button>
+            </div>
+            <div class="plan-card fade-in">
+                <div class="plan-name">PREMIUM</div>
+                <div class="plan-price">¥5,980<span>/月</span></div>
+                <p style="color: #999; margin-bottom: 30px;">毎月5種類の香りをお届け</p>
+                <ul class="plan-features">
+                    <li>✓ 20種類から5種類を選択</li>
+                    <li>✓ 各300ml（1ヶ月分）</li>
+                    <li>✓ 送料無料</li>
+                    <li>✓ いつでも変更・スキップ可能</li>
+                    <li>✓ 初回限定ギフトボックス</li>
+                    <li>✓ 限定フレグランスアクセス</li>
+                    <li>✓ パーソナル香りコンサル</li>
+                </ul>
+                <button class="cta-btn" style="width: 100%; margin-top: 20px;">このプランを選ぶ</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- フローセクション -->
+    <section class="flow">
+        <h2 class="section-title fade-in">HOW IT WORKS</h2>
+        <div class="flow-steps">
+            <div class="flow-step fade-in">
+                <div class="flow-number">1</div>
+                <h3>プランを選ぶ</h3>
+                <p>スタンダード（3種類）またはプレミアム（5種類）からお選びください</p>
+            </div>
+            <div class="flow-step fade-in">
+                <div class="flow-number">2</div>
+                <h3>香りを選ぶ</h3>
+                <p>20種類の香りから、今月のお気に入りをセレクト</p>
+            </div>
+            <div class="flow-step fade-in">
+                <div class="flow-number">3</div>
+                <h3>毎月お届け</h3>
+                <p>選んだ香りが美しいパッケージでご自宅に届きます</p>
+            </div>
+            <div class="flow-step fade-in">
+                <div class="flow-number">4</div>
+                <h3>香りを楽しむ</h3>
+                <p>毎日のバスタイムが特別な時間に変わります</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最終CTA -->
+    <section class="final-cta">
+        <h2>あなただけの香りの世界へ</h2>
+        <p>今なら初回限定、30日間返金保証付き</p>
+        <button class="cta-btn-large" onclick="scrollToPlan()">今すぐ始める</button>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2025 AROMA LUXURY. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // スムーススクロール
+        function scrollToPlan() {
+            document.getElementById('plans').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ヘッダーのスクロール効果
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // カードのホバーエフェクト
+        document.querySelectorAll('.fragrance-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
+            });
+        });
+    </script>
+</body>
+</html>

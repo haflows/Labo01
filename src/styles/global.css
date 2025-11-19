@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+/* ヘッダー */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.cta-btn {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+/* ヒーローセクション */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eaf6 100%);
+  overflow: hidden;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  font-weight: 300;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease 0.2s both;
+}
+
+.floating-circles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
+  animation: float 20s infinite ease-in-out;
+}
+
+.circle:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.circle:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+/* コンセプトセクション */
+.concept {
+  padding: 120px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: 4px;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.concept-card {
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.concept-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.concept-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.concept-card h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.concept-card p {
+  color: #666;
+  line-height: 1.8;
+}
+
+/* 香りセクション */
+.fragrance {
+  padding: 120px 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.fragrance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 60px auto 0;
+}
+
+.fragrance-item {
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.fragrance-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  transform: scale(1.05);
+}
+
+.fragrance-name {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* プランセクション */
+.plans {
+  padding: 120px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plan-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.plan-card {
+  padding: 50px 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.plan-card:hover::before {
+  transform: scaleX(1);
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  border-color: #667eea;
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+}
+
+.plan-name {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.plan-price {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plan-price span {
+  font-size: 20px;
+}
+
+.plan-features {
+  list-style: none;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.plan-features li {
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #666;
+}
+
+.plan-features li:last-child {
+  border-bottom: none;
+}
+
+/* フローセクション */
+.flow {
+  padding: 120px 40px;
+  background: #f8f9fa;
+}
+
+.flow-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto 0;
+}
+
+.flow-step {
+  text-align: center;
+  position: relative;
+}
+
+.flow-number {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.flow-step h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.flow-step p {
+  color: #666;
+  line-height: 1.8;
+}
+
+/* CTAセクション */
+.final-cta {
+  padding: 120px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.final-cta h2 {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  letter-spacing: 4px;
+}
+
+.final-cta p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-btn-large {
+  padding: 20px 60px;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+}
+
+.cta-btn-large:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* フッター */
+footer {
+  padding: 60px 40px;
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+}
+
+footer p {
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+    letter-spacing: 4px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
+
+  .concept,
+  .plans,
+  .flow {
+    padding: 80px 20px;
+  }
+
+  .fragrance {
+    padding: 80px 20px;
+  }
+}
+
+/* スクロールアニメーション用 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
